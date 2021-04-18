@@ -809,9 +809,6 @@ p {
   justify-content: center;
   margin-bottom: 30px;
   cursor: pointer;
-  transition-property: border-color;
-  transition-duration: var(--tr-duration);
-  transition-timing-function: var(--tr-timing-function);
 }
 .checkbox {
   position: absolute;
@@ -823,9 +820,8 @@ p {
   border: 0;
   clip: rect(0 0 0 0);
 }
-.checkbox-label:focus-within {
-  border: 2px solid var(--accent-color);
-  border-radius: 4px;
+.checkbox:focus + .checkbox-icon {
+  outline: 2px solid var(--accent-color);
 }
 .checkbox-link {
   margin-left: 5px;
