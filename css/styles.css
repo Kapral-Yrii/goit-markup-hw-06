@@ -228,7 +228,7 @@ p {
   margin-right: 10px;
 }
 
-/* studio page */
+/* -----------------studio page------------------ */
 
 /* hero section */
 
@@ -330,6 +330,7 @@ p {
   height: 70px;
   background-color: rgba(47, 48, 58, 0.8);
 }
+
 /* about team*/
 
 .team-title {
@@ -464,7 +465,7 @@ p {
   height: 45px;
 }
 
-/* portfolio page */
+/*------------------------portfolio page--------------------*/
 
 .project-title {
   font-weight: 700;
@@ -662,7 +663,7 @@ p {
   fill: var(--dark-bg-text-color);
 }
 
-/* modal*/
+/*-------------------------modal--------------------------*/
 
 .backdrop {
   position: fixed;
@@ -801,11 +802,16 @@ p {
 }
 .checkbox-label {
   position: relative;
+  width: 100%;
+  height: 23px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
   cursor: pointer;
+  transition-property: border-color;
+  transition-duration: var(--tr-duration);
+  transition-timing-function: var(--tr-timing-function);
 }
 .checkbox {
   position: absolute;
@@ -817,7 +823,15 @@ p {
   border: 0;
   clip: rect(0 0 0 0);
 }
+.checkbox-label:focus-within {
+  border: 2px solid var(--accent-color);
+  border-radius: 4px;
+}
+.checkbox-link {
+  margin-left: 5px;
+}
 .checkbox-icon {
+  position: relative;
   display: inline-block;
   width: 16px;
   height: 15px;
@@ -825,14 +839,22 @@ p {
   border: 2px solid var(--dark-logo-color);
   border-radius: 2px;
 }
+.checkbox-icon-checked {
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 15px;
+}
 .checkbox:checked + .checkbox-icon {
   background-color: var(--accent-color);
-  background-image: url(../images/checkbox.svg);
-  background-origin: border-box;
-  background-repeat: no-repeat;
-  background-size: contain;
   border: none;
-  background-position: center;
+  background-origin: border-box;
+}
+.checkbox:checked + .checkbox-icon .checkbox-icon-checked {
+  visibility: visible;
+  fill: var(--dark-bg-text-color);
 }
 .modal-btn {
   padding-left: 124px;
